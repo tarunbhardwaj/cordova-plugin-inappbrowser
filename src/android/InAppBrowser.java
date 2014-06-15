@@ -590,6 +590,11 @@ public class InAppBrowser extends CordovaPlugin {
                 WebViewClient client = new InAppBrowserClient(thatWebView, edittext);
                 inAppWebView.setWebViewClient(client);
                 WebSettings settings = inAppWebView.getSettings();
+
+                // Custom addition of user agent string
+                String userAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36";
+                settings.setUserAgentString(userAgent);
+
                 settings.setJavaScriptEnabled(true);
                 settings.setJavaScriptCanOpenWindowsAutomatically(true);
                 settings.setBuiltInZoomControls(true);
